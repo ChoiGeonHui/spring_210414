@@ -9,7 +9,7 @@ import com.example.lesson02.dao.StoreDAO;
 import com.example.lesson02.model.Store;
 
 @Service
-public class StoreService {
+public class StoreBO {
 	
 	
 	@Autowired

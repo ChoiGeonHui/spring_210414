@@ -3,7 +3,7 @@ package com.example.lesson02.model;
 import java.util.Date;
 
 public class Store {
-	private Integer id;
+	private int id;
 	private String name;
 	private String phoneNumber;
 	private String address;
