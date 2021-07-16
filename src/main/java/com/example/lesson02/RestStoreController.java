@@ -1,3 +1,4 @@
+
 package com.example.lesson02;
 
 import java.util.List;
@@ -11,14 +12,14 @@ import com.example.lesson02.model.Store;
 
 @RestController
 public class RestStoreController {
-	
+
 	@Autowired
-	private StoreBO storeService;
-	
+	StoreBO storeBO;
+
 	@RequestMapping("/lesson02/quiz01")
-	public List<Store> printList(){
-		List<Store> list = storeService.getList();
-		return  list;
+	public List<Store> printList() {
+		List<Store> list = storeBO.getList();
+		return list;
 	}
 
 }

@@ -1,3 +1,4 @@
+
 package com.example.lesson02.bo;
 
 import java.util.List;
@@ -10,13 +11,12 @@ import com.example.lesson02.model.Store;
 
 @Service
 public class StoreBO {
-	
-	
+
 	@Autowired
-	private StoreDAO storeDAO;
-	
-	public List<Store> getList(){
-		return storeDAO.selectStore();		
+	StoreDAO storeDAO;
+
+	public List<Store> getList() {
+		return storeDAO.selectStore();
 	}
 
 }
