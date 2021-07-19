@@ -26,4 +26,16 @@ public class Real_estateBO {
 	public List<Real_estate> getReal3(int area,int price){
 		return real_estateDAO.selectReal3(area,price);
 	}
+	
+	
+	public int insertestate(Real_estate real_estate) {
+		return real_estateDAO.insertestate(real_estate);
+	}
+	
+	public int insertestateField(
+		int realtor_id,String address,int area,String type,int price,int rentPrice
+			) {
+		return real_estateDAO.insertestateField(
+				realtor_id,address,area,type,price,rentPrice);
+	};	
 }

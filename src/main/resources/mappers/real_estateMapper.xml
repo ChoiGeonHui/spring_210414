@@ -61,13 +61,63 @@
 		from
 		real_estate
 		where
-		area &gt;= #{area}
+		<![CDATA[
+		type ='매매'
+		and
+		(
+		area >= #{area}
 		or
-		price &lt;= #{price}
+		price <= #{price}
+		)
+		]]>
 		order by
 		id desc
 
 	</select>
+	
+	<insert id="insertestate" parameterType="com.example.quiz03.model.Real_estate">
+	insert into real_estate
+	(
+	realtorId
+	,address
+	,area
+	,type
+	,price
+	)
+	values
+	(
+	#{realtorId}
+	,#{address}
+	,#{area}
+	,#{type}
+	,#{price}
+	)
+	
+	
+	</insert>
+	
+	<insert id="insertestateField" parameterType="map">
+	
+	insert into real_estate
+	(
+	realtorId
+	,address
+	,area
+	,type
+	,price
+	)
+	values
+	(
+	#{realtor_id}
+	,#{address}
+	,#{area}
+	,#{type}
+	,#{price}
+	)
+	
+	
+	
+	</insert>
 
 </mapper>
 

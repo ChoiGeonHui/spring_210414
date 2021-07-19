@@ -17,4 +17,13 @@ public interface Real_estateDAO {
 	public List<Real_estate> selectReal3(@Param("area") int area,
 			@Param("price")int price);
 
+	public int insertestate(Real_estate real_estate);
+	
+	public int insertestateField(
+			@Param("realtor_id") int id,
+			@Param("address") String address,
+			@Param("area") int area,
+			@Param("type") String type,
+			@Param("price") int price,
+			@Param("rentPrice") int rentPrice);
 }
