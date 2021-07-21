@@ -2,20 +2,57 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
- <mapper namespace="com.example.quiz04.dao">
+ <mapper namespace="com.example.quiz04.dao.SellerDAO">
  <insert id="insertSeller" parameterType="map">
- INSERT INTO
- (nickName,
+ INSERT INTO seller
+ (
+ nickName,
  profileImageUrl,
  temperature,
  createdAt,
- updatedAt)
+ updatedAt
+ )
  values
- (#{name},
+ (
+ #{name},
  #{url},
  #{temper},
  now(),
- now())
+ now()
+ )
 
  </insert>
+ 
+ <select id="infoSeller" resultType="com.example.quiz04.model.Seller">
+ select 
+ id,
+ nickName,
+ profileImageUrl,
+ temperature,
+ createdAt,
+ updatedAt
+ from seller
+ order by
+ id desc
+ limit 1
+ 
+ 
+ </select>
+ 
+  <select id="infoSellerId" parameterType="map" resultType="com.example.quiz04.model.Seller">
+ select 
+ id,
+ nickName,
+ profileImageUrl,
+ temperature,
+ createdAt,
+ updatedAt
+ from seller
+ where
+ id = #{id}
+ 
+ 
+ </select>
+ 
+ 
  </mapper>
