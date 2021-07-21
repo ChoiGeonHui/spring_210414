@@ -92,8 +92,6 @@
 	,#{type}
 	,#{price}
 	)
-	
-	
 	</insert>
 	
 	<insert id="insertestateField" parameterType="map">
@@ -114,10 +112,26 @@
 	,#{type}
 	,#{price}
 	)
-	
-	
-	
 	</insert>
+	
+	<update id="updateRealEstate" parameterType="map">
+	update
+	real_estate
+	set
+	price = #{price},
+	type = #{type},
+	updatedAt = now()
+	where 
+	id = #{id}
+	</update>
+	
+	<delete id="deleteRealEstate" parameterType="int">
+	delete
+	from
+	real_estate
+	where
+	id = #{id}
+	</delete>
 
 </mapper>
 

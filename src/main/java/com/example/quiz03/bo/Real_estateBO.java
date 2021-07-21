@@ -37,5 +37,17 @@ public class Real_estateBO {
 			) {
 		return real_estateDAO.insertestateField(
 				realtor_id,address,area,type,price,rentPrice);
-	};	
+	};
+	
+	
+	public int updateRealEstate(int id,int price,String type) {
+		return real_estateDAO.updateRealEstate(id, price, type);
+	}
+	
+	public int deleteRealEstate(int id) {
+		return real_estateDAO.deleteRealEstate(id);
+	}
+	
+	
+	
 }
