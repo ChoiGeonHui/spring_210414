@@ -75,7 +75,7 @@ public class QuizController {
 		member.put("point", 420);
 		membership.add(member);
 		
-		model.addAttribute("member", member);
+		model.addAttribute("member", membership);
 		return "lesson05/quiz03";
 	}
 }
