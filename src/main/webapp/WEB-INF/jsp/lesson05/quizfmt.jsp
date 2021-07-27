@@ -36,7 +36,7 @@
 					<tr>
 						<td>${status.count }</td>
 						<td>${cand}</td>
-						<td><fmt:formatNumber value="${cand/100000}" type="percent" /></td>
+						<td><fmt:formatNumber value="${cand/1000000}" type="percent" /></td>
 					</tr>
 				</c:forEach>
 

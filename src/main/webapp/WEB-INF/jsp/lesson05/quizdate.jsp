@@ -33,14 +33,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:set var="num" value="0" />
 
 				<c:forEach var="card" items="${card}" varStatus="status">
 					<tr>
 						<td>${card.store}</td>
 						<td><fmt:formatNumber value="${card.pay}" type="currency"/> </td>
 						<td><fmt:parseDate value="${card.date}" pattern="yyyy-MM-dd" var="day"/>
-						<fmt:formatDate value="${day}" pattern="yyyy년 MM월 dd일"/>
+						<fmt:formatDate value="${day}" pattern="yyyy년 M월 dd일"/>
 						</td>
 						<td>${card.installment}</td>
 					</tr>
