@@ -18,4 +18,29 @@
 		weatherhistory;
 
 	</select>
+	
+	<insert id="insertWeather" parameterType="com.example.quiz05.model.Weather">
+	insert 
+	into
+	weatherhistory
+	(date,
+	weather,
+	temperatures,
+	precipitation,
+	microDust,
+	windSpeed)
+	values
+	(
+	#{date},
+	#{weather},
+	#{temperatures},
+	#{precipitation},
+	#{microDust},
+	#{windSpeed}
+	
+	)
+	
+	
+	</insert>
+	
 </mapper>

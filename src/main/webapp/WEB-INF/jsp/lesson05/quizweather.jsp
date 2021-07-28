@@ -68,6 +68,7 @@
 
 
 		</section>
+		<hr>
 		<jsp:include page="wfooter.jsp" />
 	</div>
 
