@@ -4,12 +4,21 @@ import java.util.Date;
 
 public class Weather {
 	
+	private int id;
 	private Date date;
 	private String weather;
 	private double temperatures;
 	private double precipitation;
 	private String microDust;
 	private double windSpeed;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public Date getDate() {
 		return date;
 	}
