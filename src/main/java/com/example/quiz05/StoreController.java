@@ -39,11 +39,11 @@ public class StoreController {
 		Store store= new Store(); 
 		store = storeBO.selectstoreName(storeId);
 		String  name = store.getName();
-		if (list == null) {
+		model.addAttribute("name", name);
+		if (list.isEmpty()) {
 			return "lesson05/storetemper3";
 		}else {
 			model.addAttribute("review", list);
-			model.addAttribute("name", name);
 			return "lesson05/storetemper2";
 		}
 	}
