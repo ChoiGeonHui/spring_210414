@@ -12,4 +12,17 @@
 		`store`;
 
 	</select>
+	
+	
+	<select id="selectstoreName" parameterType="int"
+	resultType="com.example.lesson02.model.Store">
+	select
+	name
+	from 
+	store
+	where
+	id = #{storeId}
+	
+	
+	</select>
 </mapper>

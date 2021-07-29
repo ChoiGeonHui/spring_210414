@@ -97,6 +97,8 @@
 	$(document).ready(function() {
         // 모든 데이터피커에 적용
         $.datepicker.setDefaults({
+        	changeMonth: true,
+        	changeYear : true,
             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'] // 요일을 한글로 변경
             , dateFormat: 'yy-mm-dd'
         });
