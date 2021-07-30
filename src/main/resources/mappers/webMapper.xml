@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.quiz06.dao.FavoriteDAO">
+	<select id="selectWeb" parameterType="map"
+		resultType="com.example.quiz06.model.Favorite">
+
+		select
+		id,
+		name,
+		url,
+		createdAt,
+		updatedAt
+		from 
+		favorite;
+
+	</select>
+	
+	<insert id="insertWeb" parameterType="com.example.quiz06.model.Favorite">
+	insert 
+	into
+	favorite
+	(name,
+	url
+	)
+	values
+	(
+	#{name},
+	#{url}	
+	)
+	
+	
+	</insert>
+	
+</mapper>
