@@ -21,5 +21,13 @@ public class FavoriteBO {
 	public void insertWeb(String name ,String url) {
 		favoriteDAO.insertWeb(name,url);
 	}
+	
+	public boolean checkByurl(String url) {
+	 return	favoriteDAO.checkByurl(url);
+	}
+	
+	public void deleteWeb(String url) {
+		favoriteDAO.deleteWeb(url);
+	}
 
 }

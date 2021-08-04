@@ -24,15 +24,19 @@
 				<tr>
 					<th class="col-2">No.</th>
 					<th class="col-3">이름</th>
-					<th class="col-7">주소</th>
+					<th class="col-6">주소</th>
+					<th class="col-2">삭제</th>
 				</tr>
 			</thead>
 			<tbody>
 			<c:forEach var="web" items="${web }" varStatus="status">
-			<tr>
-						<td class="col-2">${status.count }</td>
+					<tr>
+						<td class="col-2">${status.count}</td>
 						<td class="col-3">${web.name }</td>
-						<td class="col-7">${web.url }</td>
+						<td class="col-6">${web.url }</td>
+						<td class="col-2">
+						<button type="button" id="delBtn${status.count}" value="${web.url}" class="btn btn-danger">삭제</button>
+						</td>
 					</tr>
 			</c:forEach>
 			</tbody>
@@ -41,6 +45,44 @@
 
 
 	</div>
+	
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		//리스트 가져오기
+		let list = '<c:out value="${web}" />';
+		
+			$('#delBtn6').on('click', function() {
+				let url = $('#delBtn6').val();
+
+				 $.ajax({
+					type:"get",
+					data:{"url":url},
+					url:"/lesson06/delete",
+				 	success:function(data){
+						location.href = "/lesson06/selectweb";
+					},
+					complete : function(data) {
+				    	alert("삭제 완료");
+				    },
+					error:function(e){
+						alert("error: "+e);
+					} 
+					
+				}); 
+
+			});
+			
+			
+			
+
+		});
+	</script>
+	
+	
+	
+	
 
 </body>
 </html>

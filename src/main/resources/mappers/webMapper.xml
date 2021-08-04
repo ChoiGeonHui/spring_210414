@@ -17,7 +17,8 @@
 
 	</select>
 	
-	<insert id="insertWeb" parameterType="com.example.quiz06.model.Favorite">
+	<insert id="insertWeb" 
+	parameterType="com.example.quiz06.model.Favorite">
 	insert 
 	into
 	favorite
@@ -32,5 +33,26 @@
 	
 	
 	</insert>
+	
+	
+	<select id="checkByurl" parameterType="String"
+	resultType="boolean">
+	select
+	count(1)
+	from
+	favorite
+	where
+	url = #{url}
+	</select>
+	
+	<delete id="deleteWeb" parameterType="String">
+	delete 
+	from
+	favorite 
+	where 
+	url = #{url}
+	
+	</delete>
+	
 	
 </mapper>

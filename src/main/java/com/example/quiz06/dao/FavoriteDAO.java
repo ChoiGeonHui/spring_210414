@@ -14,4 +14,8 @@ public interface FavoriteDAO {
 	
 	public void insertWeb(@Param("name")String name,@Param("url")String url);
 
+	
+	public boolean checkByurl(String url);
+	
+	public void deleteWeb(String url);
 }
