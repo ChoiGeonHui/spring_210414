@@ -34,9 +34,10 @@
 						<td class="col-2">${status.count}</td>
 						<td class="col-3">${web.name }</td>
 						<td class="col-6">${web.url }</td>
-						<td class="col-2">
-						<button type="button" id="delBtn${status.count}" value="${web.url}" class="btn btn-danger">삭제</button>
-						</td>
+						<!-- 1번째 방법 : name속성과 value속성을 이용해서 동적으로 삭제버튼 감지 -->
+						<td class="col-2"><button type="button" name="delBtn" value="${web.url}" class="btn btn-danger">삭제</button></td>
+						<!-- 2번째 방법 : data를 이용해서 태그에 data를 임시 저장해놓기 -->
+						<!-- <td class="col-2"><button type="button" class="favor-btn btn btn-danger" data-favorite-id>삭제</button></td> -->
 					</tr>
 			</c:forEach>
 			</tbody>
@@ -50,14 +51,12 @@
 	<script type="text/javascript">
 	$(document).ready(function(){
 		
-		//리스트 가져오기
-		let list = '<c:out value="${web}" />';
 		
-			$('#delBtn6').on('click', function() {
-				let url = $('#delBtn6').val();
+			 $('td').on('click','button[name=delBtn]', function() {
+				let url = $(this).attr('value');
 
 				 $.ajax({
-					type:"get",
+					type:"post",
 					data:{"url":url},
 					url:"/lesson06/delete",
 				 	success:function(data){
@@ -72,8 +71,12 @@
 					
 				}); 
 
-			});
+			}); 
 			
+			/* $('.favor-btn').on('click',function(){
+				let faovrId =  $(this).data('favorite-id');
+				alert(faovrId);
+			}) */
 			
 			
 

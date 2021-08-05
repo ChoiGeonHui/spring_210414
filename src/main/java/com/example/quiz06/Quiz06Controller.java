@@ -66,7 +66,7 @@ public class Quiz06Controller {
 	}
 	
 	
-	@GetMapping("/lesson06/delete")
+	@PostMapping("/lesson06/delete")
 	@ResponseBody
 	public String delete(
 			@RequestParam("url") String url) {
