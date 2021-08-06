@@ -31,4 +31,50 @@ booking
 
 
 
+<insert id="insertBooking" parameterType="com.example.quiz06.model.Booking">
+	insert into
+	booking(
+	name,
+	date,
+	day,
+	headcount,
+	phoneNumber,
+	state
+	)
+	values(
+	#{name},
+	#{date},
+	#{day},
+	#{headcount},
+	#{phoneNumber},
+	'대기중'
+	)
+
+
+
+</insert>
+
+<select id="checkBooking" parameterType="map"
+resultType="com.example.quiz06.model.Booking">
+
+	select
+	id,
+	name,
+	headcount,
+	day,
+	date,
+	phoneNumber,
+	state,
+	createdAt,
+	updatedAt
+	from
+	booking
+	where
+	name = #{name}
+	and 
+	phoneNumber = #{phoneNumber}
+</select>
+
+
+
 </mapper>

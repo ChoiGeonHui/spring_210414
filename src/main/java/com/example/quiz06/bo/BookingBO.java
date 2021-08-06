@@ -1,6 +1,8 @@
 package com.example.quiz06.bo;
 
+import java.util.Date;
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,15 @@ public class BookingBO {
 	
 	public void deleteBooking(int id) {
 		bookingDAO.deleteBooking(id);
+	}
+	
+	public void insertBooking(String name,Date date,int day,
+			int headcount,String phoneNumber) {
+		bookingDAO.insertBooking(name, date, day, headcount, phoneNumber);
+	}
+	
+	public Booking checkBooking(String name,String phoneNumber) {
+		return bookingDAO.checkBooking(name, phoneNumber);
 	}
 
 }

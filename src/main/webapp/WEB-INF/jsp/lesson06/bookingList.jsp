@@ -48,15 +48,15 @@
 							<tr>
 								<td>${booking.name}</td>
 								<td><fmt:formatDate value="${booking.date}"
-										pattern="yyyy년 MM월 dd일" /></td>
+										pattern="yyyy년 M월 d일" /></td>
 								<td>${booking.day}</td>
 								<td>${booking.headcount}</td>
 								<td>${booking.phoneNumber}</td>
 								<c:choose>
-									<c:when test="${booking.state =='확정'}">
+									<c:when test="${booking.state eq'확정'}">
 										<td class="text-info">${booking.state}</td>
 									</c:when>
-									<c:when test="${booking.state =='대기중'}">
+									<c:when test="${booking.state eq'대기중'}">
 										<td class="text-success">${booking.state}</td>
 									</c:when>
 									<c:otherwise>
@@ -93,10 +93,8 @@
 					data:{'id':bookingId},
 					url:'/lesson06/deletebooking',
 					success:function(data){
+					   alert("삭제 완료");
 						location.href = "/lesson06/bookinglist";
-					},
-					complete : function(data) {
-					    	alert("삭제 완료");
 					},
 					error:function(e){
 						alert("error: "+e);
